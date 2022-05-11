@@ -18,9 +18,8 @@
       <td>{{ game.equipe1 }}</td>
       <td>{{ game.equipe2 }}</td>
       <td>{{ game.date }}</td>
-      
-      <td> <button class="btn btn-success" >Edit</button> 
-        <button class="m-3 btn btn-sm btn-danger" >
+            <td> <button class="btn btn-success" >Edit</button> 
+        <button class="m-3 btn btn-sm btn-danger" (click)="deletegame(game.id)">
           Remove 
         </button>
       </td>

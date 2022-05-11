@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
       this.showUserBoard = this.roles.includes('ROLE_USER');
       console.log(this.tokenStorage.getToken());
       
-      //this.tokenStorage.saveToken(this.tokenStorage.getToken());
-      //this.tokenStorage.saveUser(this.tokenStorage.getUser());
+      this.tokenStorage.saveToken(this.tokenStorage.getToken());
+      this.tokenStorage.saveUser(this.tokenStorage.getUser());
   }
 }
   

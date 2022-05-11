@@ -1,5 +1,23 @@
-<div class="container">
-    <header class="jumbotron">
-      <p>{{ content }}</p>
-    </header>
-  </div>
+
+<table class="table table-bordered">
+    <tr>
+      <th>Team 1 </th>
+      <th>Team 2 </th>
+      <th>Date  </th>
+      <th width="220px"> Booking   </th>
+    </tr>
+    <tr *ngFor="let game of games">
+      <td>{{ game.equipe1 }}</td>
+      <td>{{ game.equipe2 }}</td>
+      <td>{{ game.date}}</td>
+      
+      <td> 
+        <button class="m-3 btn btn-sm btn-danger" >
+          Book   your Ticket 
+        </button>
+      </td>
+      
+      
+      
+    </tr>
+  </table>

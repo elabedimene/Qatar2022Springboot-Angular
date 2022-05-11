@@ -25,6 +25,11 @@ export class GamesService {
       
   }
 
+  getgame(id : any): Observable<any> {
+    return this.httpClient.get(this.apiURL + '/Game/' + {id}, this.httpOptions )
+    
+}
+
   create(data : any): Observable<any> {
    
     return this.httpClient.post(this.apiURL + '/addGame', data , this.httpOptions);
@@ -34,8 +39,8 @@ export class GamesService {
     return this.httpClient.put(this.apiURL + '/updateGame' + {id}, data);
   }
 
-  delete(id: any): Observable<any> {
-    return this.httpClient.delete(this.apiURL + '/deleteGames');
+  delete(id: number): Observable<any> {
+    return this.httpClient.delete(this.apiURL + '/Game/' + {id} );
   }
   
 }

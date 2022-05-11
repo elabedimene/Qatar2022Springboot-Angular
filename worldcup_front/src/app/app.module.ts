@@ -17,6 +17,8 @@ import { HeaderComponent } from './header/header.component';
 import { ListgameComponent } from './games/listgame/listgame.component';
 import { authInterceptorProviders, AuthinterceptorService } from './helpers/authinterceptor.service';
 import { AddgameComponent } from './games/addgame/addgame.component';
+import { ListstadComponent } from './stadium/liststad/liststad.component';
+import { DeletegameComponent } from './game/deletegame/deletegame.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { AddgameComponent } from './games/addgame/addgame.component';
     HeaderComponent,
     
     ListgameComponent,
-         AddgameComponent
+         AddgameComponent,
+         ListstadComponent,
+         DeletegameComponent
   ],
   imports: [
     BrowserModule,

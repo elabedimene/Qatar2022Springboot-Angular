@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { ListgameComponent } from './games/listgame/listgame.component';
+import { AddgameComponent } from './games/addgame/addgame.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'games', component: ListgameComponent },
-  { path: '*', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'addgame', component: AddgameComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 
 ];
 

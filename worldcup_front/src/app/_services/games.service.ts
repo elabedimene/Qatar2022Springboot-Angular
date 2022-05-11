@@ -21,16 +21,17 @@ export class GamesService {
   
 
   getAll(): Observable<any> {
-      return this.httpClient.get(this.apiURL + '/Games')
+      return this.httpClient.get(this.apiURL + '/Games', this.httpOptions )
       
   }
 
-  create(data: any): Observable<any> {
-    return this.httpClient.post(this.apiURL + '/addGame', data);
+  create(data : any): Observable<any> {
+   
+    return this.httpClient.post(this.apiURL + '/addGame', data , this.httpOptions);
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.httpClient.put(this.apiURL + '/updateGame/' + {id}, data);
+    return this.httpClient.put(this.apiURL + '/updateGame' + {id}, data);
   }
 
   delete(id: any): Observable<any> {

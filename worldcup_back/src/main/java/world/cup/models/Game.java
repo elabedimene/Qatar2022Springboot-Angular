@@ -1,7 +1,9 @@
 package world.cup.models;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -21,10 +23,14 @@ public class Game {
 	private String equipe2;
 	
 	
-	
-	@OneToOne (targetEntity = Stadium.class , cascade = CascadeType.ALL)
-	@JoinColumn ( name = "sg_fk" , referencedColumnName= "id")
-   private Stadium stadium  ; 
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinTable(	name = "game_stad", 
+				joinColumns = @JoinColumn(name = "game_id"), 
+				inverseJoinColumns = @JoinColumn(name = "stad_id"))
+	private Stadium stad ;
+	//@OneToOne (targetEntity = Stadium.class , cascade = CascadeType.ALL)
+	//@JoinColumn ( name = "sg_fk" , referencedColumnName= "id")
+   //private Stadium stadium  ; 
 	
 	public Game() {}
 	public Game( Date date, String equipe1, String equipe2) {

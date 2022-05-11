@@ -1,20 +1,29 @@
+<div  >
 
-
- 
+             <a routerLink="/addgame"   class="btn btn-primary rounded-0 py-2 px-lg-4 d-none d-lg-block"> Add A Game<i class="fa fa-arrow-right ms-3"></i></a>
+</div>
 
 <p>listgame works!</p>
 <table class="table table-bordered">
     <tr>
       <th>ID</th>
-      <th>Title</th>
-      <th>Body</th>
+      <th>Team 1 </th>
+      <th>Team 2 </th>
+      <th>Date  </th>
+      <th>Address </th>
       <th width="220px">Action</th>
     </tr>
     <tr *ngFor="let game of games">
       <td>{{ game.id }}</td>
       <td>{{ game.equipe1 }}</td>
       <td>{{ game.equipe2 }}</td>
-      <td> Edit delete </td>
+      <td>{{ game.date }}</td>
+      
+      <td> <button class="btn btn-success" >Edit</button> 
+        <button class="m-3 btn btn-sm btn-danger" >
+          Remove 
+        </button>
+      </td>
       
       
       

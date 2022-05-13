@@ -1,9 +1,10 @@
 import { Stadium } from "./Stadium";
 export interface Game {
 
-   id: number;
+   id: any;
+   name : String ;
   date : String ; 
     equipe1: string;
    equipe2 : string;
-    //stadium : Stadium ; 
+  stad : Stadium ; 
 }

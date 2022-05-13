@@ -40,7 +40,9 @@ export class GamesService {
   }
 
   delete(id: number): Observable<any> {
-    return this.httpClient.delete(this.apiURL + '/Game/' + {id} );
+    console.log(typeof(id));
+    var id2= ""+id;
+    return this.httpClient.delete(this.apiURL + '/Game/' + id ,this.httpOptions);
   }
   
 }

@@ -7,14 +7,28 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table(name = "Game")
+
 public class Game {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@Column(name = "id")
 	private long id;
+	@Column(name = "name")
+	private String name;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	@Column(name = "date")
 	private Date date;
 	@Column(name = "equipe1")
@@ -23,15 +37,24 @@ public class Game {
 	private String equipe2;
 	
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinTable(	name = "game_stad", 
-				joinColumns = @JoinColumn(name = "game_id"), 
-				inverseJoinColumns = @JoinColumn(name = "stad_id"))
+   
+    @OneToOne(fetch = FetchType.LAZY)
+	//@OneToOne(targetEntity =  Stadium.class, cascade = CascadeType.ALL)
+	@JsonIgnoreProperties({"hibernateLazyInitializer" , "handler"})
+	@JoinColumn (name = "stad_id" , referencedColumnName = "id")
 	private Stadium stad ;
+	
+	
 	//@OneToOne (targetEntity = Stadium.class , cascade = CascadeType.ALL)
 	//@JoinColumn ( name = "sg_fk" , referencedColumnName= "id")
    //private Stadium stadium  ; 
 	
+	public Stadium getStad() {
+		return stad;
+	}
+	public void setStad(Stadium stad) {
+		this.stad = stad;
+	}
 	public Game() {}
 	public Game( Date date, String equipe1, String equipe2) {
 		

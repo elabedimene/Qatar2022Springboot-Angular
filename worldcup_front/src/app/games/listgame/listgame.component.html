@@ -7,19 +7,24 @@
 <table class="table table-bordered">
     <tr>
       <th>ID</th>
+      <th>Name </th>
       <th>Team 1 </th>
       <th>Team 2 </th>
       <th>Date  </th>
       <th>Address </th>
       <th width="220px">Action</th>
     </tr>
-    <tr *ngFor="let game of games">
-      <td>{{ game.id }}</td>
+    <tr *ngFor="let game of games"  >
+
+      <td> {{ game.id }}</td>
+      <td>{{ game.name }}</td>
       <td>{{ game.equipe1 }}</td>
       <td>{{ game.equipe2 }}</td>
       <td>{{ game.date }}</td>
+      <td>{{ game.stad.address}}</td>
             <td> <button class="btn btn-success" >Edit</button> 
-        <button class="m-3 btn btn-sm btn-danger" (click)="deletegame(game.id)">
+        <button class="m-3 btn btn-sm btn-danger" (click)="deletegame( game.id ) ">
+        
           Remove 
         </button>
       </td>

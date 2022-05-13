@@ -1,0 +1,52 @@
+<div>
+    <div class="submit-form">
+      
+  
+      <form
+      
+      name="form"
+      (ngSubmit)="f.form.valid && savetick()"
+      #f="ngForm"
+      novalidate
+    >
+
+        <div class="form-group">
+          <label for="game "> <h4>  Games </h4> </label>
+          <select id="game"
+          required
+          [(ngModel)]="game"
+          name="game">
+             <option *ngFor = " let g of game "> {{ g.name }} </option>
+
+          </select>
+        <div>
+
+       
+          </div>
+          
+          <label for="catgorie "> <h4>  Catgorie</h4> </label>
+          <select id="catgorie"
+          required
+          [(ngModel)]="categ"
+          name="catgorie">
+        
+                <option *ngFor = " let c of categ "> {{ c.name }} </option>
+
+          </select>
+          
+          
+        </div>
+  
+      
+        
+        </form>
+  
+        <button (click)="savetick()" class="btn btn-success">Submit</button>
+     
+  
+      <div *ngIf="submitted">
+        <h4>Ticket was  successfully booked!</h4>
+        
+      </div>
+    </div>
+  </div>

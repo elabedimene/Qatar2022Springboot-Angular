@@ -7,6 +7,9 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { ListgameComponent } from './games/listgame/listgame.component';
 import { AddgameComponent } from './games/addgame/addgame.component';
+import { ListstadComponent } from './stadium/liststad/liststad.component';
+import { AddTicketComponent } from './Tickets/add-ticket/add-ticket.component';
+import { AddstadComponent } from './stadium/addstad/addstad.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -16,6 +19,11 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'games', component: ListgameComponent },
   { path: 'addgame', component: AddgameComponent },
+  { path: 'addticket', component: AddTicketComponent },
+  { path: 'stadiums', component: ListstadComponent },
+  { path: 'addstad', component: AddstadComponent },
+
+  
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 
 ];

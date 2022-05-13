@@ -19,7 +19,7 @@ export class StadiumService {
   
 
   getAll(): Observable <any> {
-      return this.httpClient.get(this.apiURL + '/Stadiums')
+      return this.httpClient.get(this.apiURL + '/Stadiums' , this.httpOptions)
       
   }
 
@@ -28,10 +28,10 @@ export class StadiumService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.httpClient.put(this.apiURL + '/updateStadium/' + {id}, data);
+    return this.httpClient.put(this.apiURL + '/updateStadium/' + id, data);
   }
 
   delete(id: any): Observable<any> {
-    return this.httpClient.delete(this.apiURL + '/deleteStadium');
+    return this.httpClient.delete(this.apiURL + '/Stadium/' + id, this.httpOptions);
   }
 }

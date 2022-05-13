@@ -1,0 +1,54 @@
+<div>
+    <div class="submit-form">
+      
+  
+      <form
+      
+      name="form"
+      (ngSubmit)="f.form.valid && savegame()"
+      #f="ngForm"
+      novalidate
+    >
+    <div class="form-group">
+      <label for="address">address </label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        required
+        [(ngModel)]="stad.address"
+        name="address"
+      />
+    </div>    
+    <div class="form-group">
+          <label for="capacity">capacity </label>
+          <input
+            type="text"
+            class="form-control"
+            id="capacity"
+            required
+            [(ngModel)]="stad.capacity"
+            name="capacity"
+          />
+        </div>
+  
+        
+        
+  
+  
+  
+  
+  
+  
+       
+        </form>
+  
+        <button (click)="savegame()" class="btn btn-success">Submit</button>
+     
+  
+      <div *ngIf="submitted">
+        <h4> Stadium was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newgame()">Add</button>
+      </div>
+    </div>
+  </div>

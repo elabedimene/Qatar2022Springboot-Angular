@@ -48,6 +48,22 @@ public class Ticket {
 	public float getPrice() {
 		return price;
 	}
+	public Game getGame() {
+		return game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
 	public void setPrice(float price) {
 		this.price = price;
 	}

@@ -61,7 +61,7 @@ public class GameController {
 	    Game Game = gamerepo.findById(GameId).orElseThrow(null);
 	            //.orElseThrow(() -> new ResourceNotFoundException("Game", "id", GameId));
 
-	   // GameRepository.deleteById(GameId);
+	   gamerepo.deleteById(GameId);
 	    gamerepo.delete(Game);
 
 	    return ResponseEntity.ok().build();

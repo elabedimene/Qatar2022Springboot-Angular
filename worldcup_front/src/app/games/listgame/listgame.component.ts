@@ -16,14 +16,15 @@ export class ListgameComponent implements OnInit {
 
 
 
-  //game: any = {
-
-   // equipe1 : '',
-   //  equipe2 : '' , 
-   //  date : '' 
-  // };
+  game: any = {
+    id : 0 ,
+    equipe1 : '',
+    equipe2 : '' , 
+     date : '' 
+     //stad : null 
+   };
    deleted = false;
-
+   cgame : any ;
   games: Game[] = [] ; 
   stadium: Stadium[] = [] ; 
   constructor(public gameService: GamesService , public stadService : StadiumService 
@@ -31,26 +32,34 @@ export class ListgameComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    this.getAll() ;
+    this.stadService.getAll().subscribe((data: Stadium[])=>{
+      this.stadium = data;
+      console.log(this.stadium);
+    })
+   
+  }
+  getAll(){
     this.gameService.getAll().subscribe((data: Game[])=>{
       this.games = data;
       console.log(this.games);
     })  
 
-   
   }
 
-  deletegame( id : number): void {
+  deletegame(id : number): void {
+    //console.log("aaaaaaaaaaaaaaaa" +game.id);
     
     this.gameService.delete(id)
       .subscribe({
         next: (res) => {
           console.log(res);
           this.deleted = true;
+this.getAll();
         },
         error: (e) => console.error(e)
       });
     }
 
-  
-
+   
 }

@@ -18,6 +18,8 @@ import { ListgameComponent } from './games/listgame/listgame.component';
 import { authInterceptorProviders, AuthinterceptorService } from './helpers/authinterceptor.service';
 import { AddgameComponent } from './games/addgame/addgame.component';
 import { ListstadComponent } from './stadium/liststad/liststad.component';
+import { AddTicketComponent } from './Tickets/add-ticket/add-ticket.component';
+import { AddstadComponent } from './stadium/addstad/addstad.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { ListstadComponent } from './stadium/liststad/liststad.component';
     ListgameComponent,
          AddgameComponent,
          ListstadComponent,
+         AddTicketComponent,
+         AddstadComponent,
   ],
   imports: [
     BrowserModule,

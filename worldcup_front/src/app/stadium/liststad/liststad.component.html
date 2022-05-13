@@ -1,1 +1,30 @@
-<p>liststad works!</p>
+<div  >
+
+    <a routerLink="/addstad"   class="btn btn-primary rounded-0 py-2 px-lg-4 d-none d-lg-block"> Add A Stadium <i class="fa fa-arrow-right ms-3"></i></a>
+</div>
+
+<table class="table table-bordered">
+<tr>
+<th>ID</th>
+<th>Adress  </th>
+<th>Capacity </th>
+
+<th width="220px">Action</th>
+</tr>
+<tr *ngFor="let stad of stadium">
+<td>{{ stad.id }}</td>
+<td>{{ stad.address }}</td>
+<td>{{ stad.capacity }}</td>
+   <td> <button class="btn btn-success" >Edit</button> 
+<button class="m-3 btn btn-sm btn-danger" (click)="deletestad(stad.id) " >
+ Remove 
+</button>
+</td>
+
+
+
+</tr>
+</table>
+
+
+

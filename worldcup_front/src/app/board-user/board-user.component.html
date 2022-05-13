@@ -1,18 +1,20 @@
 
 <table class="table table-bordered">
     <tr>
+      <th>Name</th>
       <th>Team 1 </th>
       <th>Team 2 </th>
       <th>Date  </th>
       <th width="220px"> Booking   </th>
     </tr>
     <tr *ngFor="let game of games">
+      <td>{{ game.name }}</td>
       <td>{{ game.equipe1 }}</td>
       <td>{{ game.equipe2 }}</td>
       <td>{{ game.date}}</td>
       
       <td> 
-        <button class="m-3 btn btn-sm btn-danger" >
+        <button class="m-3 btn btn-sm btn-danger" routerLink = "/addticket">
           Book   your Ticket 
         </button>
       </td>
